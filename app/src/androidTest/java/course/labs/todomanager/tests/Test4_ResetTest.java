@@ -26,7 +26,7 @@ public class Test4_ResetTest extends
 	// Executes the ResetTest
 	public void testRun() {
 
-		int delay = 2000;
+		int delay = 20000;
 
 		// ============= Section One ==============
 		// Wait for activity: 'course.labs.todomanager.ToDoManagerActivity'

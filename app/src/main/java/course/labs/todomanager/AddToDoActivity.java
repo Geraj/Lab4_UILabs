@@ -109,13 +109,8 @@ public class AddToDoActivity extends Activity {
 
 				// TODO - Reset data to default values
 				mTitleText.setText(new String());
-				//mDefaultStatusButton.setChecked(true);
 				mPriorityRadioGroup.check(mDefaultPriorityButton.getId());
-				//mDefaultPriorityButton.setChecked(true);
 				mStatusRadioGroup.check(mDefaultStatusButton.getId());
-
-                
-				// reset date and time
 				setDefaultDateTime();
 
 			}
@@ -132,32 +127,32 @@ public class AddToDoActivity extends Activity {
 				// gather ToDoItem data
 
 
-				// TODO - Get the current Priority
-				int id = mPriorityRadioGroup.getCheckedRadioButtonId();
-				RadioButton radioButton = (RadioButton)mPriorityRadioGroup.findViewById(id);
-				String string = radioButton.getText().toString();
-				Priority priority = Priority.MED;
-				if (Priority.HIGH.toString().equals(string)){
-					priority = Priority.HIGH;
-				} else if (Priority.LOW.toString().equals(string)){
-					priority = Priority.LOW;
-				}
+//				// TODO - Get the current Priority
+//				int id = mPriorityRadioGroup.getCheckedRadioButtonId();
+//				RadioButton radioButton = (RadioButton)mPriorityRadioGroup.findViewById(id);
+//				String string = radioButton.getText().toString();
+//				Priority priority = Priority.MED;
+//				if (Priority.HIGH.toString().equalsIgnoreCase(string)){
+//					priority = Priority.HIGH;
+//				} else if (Priority.LOW.toString().equalsIgnoreCase(string)){
+//					priority = Priority.LOW;
+//				}
 
 
 
-				// TODO - Get the current Status
-				Status status = Status.DONE;
-				id = mStatusRadioGroup.getCheckedRadioButtonId();
-				radioButton = (RadioButton)mStatusRadioGroup.findViewById(id);
-				string = radioButton.getText().toString();
-				if (Status.NOTDONE.toString().equals(string)){
-					status = Status.NOTDONE;
-				}
+//				// TODO - Get the current Status
+//				Status status = Status.NOTDONE;
+//				id = mStatusRadioGroup.getCheckedRadioButtonId();
+//				radioButton = (RadioButton)mStatusRadioGroup.findViewById(id);
+//				string = radioButton.getText().toString();
+//				if (Status.DONE.toString().equalsIgnoreCase(string)){
+//					status = Status.DONE;
+//				}
 
 				// TODO - Get the current ToDoItem Title
 
 
-				String titleString = mTitleText.getText().toString();
+//				String titleString = getToDoTitle();
 
 
 				// Construct the Date string
@@ -165,7 +160,7 @@ public class AddToDoActivity extends Activity {
 
 				// Package ToDoItem data into an Intent
 				Intent data = new Intent();
-				ToDoItem.packageIntent(data, titleString, priority, status,
+				ToDoItem.packageIntent(data, getToDoTitle(), getPriority(), getStatus(),
 						fullDate);
 
 				// TODO - return data Intent and finish
